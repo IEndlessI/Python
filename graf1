@@ -1,0 +1,28 @@
+from collections import Counter
+
+import matplotlib
+import format
+import matplotlib.pyplot as plt
+
+sTop = dict(Counter(format.sDict).most_common(15))
+hTop = dict(Counter(format.hDict).most_common(15))
+res = sum(map(len, format.hDict))/float(len(format.hDict))
+print(res)
+# keys = format.hDict.keys()
+# values = format.hDict.values()
+# tmp = plt.subplots()
+# tmp.plot(keys,values)
+# plt.plot(keys, values)
+# plt.show()
+# tmp.show()
+def createPlot(arr, info, col):
+    fig, ax = plt.subplots()
+    ax.plot(arr.keys(), arr.values(), 'y', label=info, color=col)
+    ax.set_xlabel('Words')
+    ax.set_ylabel('Amount')
+    plt.legend()
+    plt.show()
+
+
+createPlot(sTop, 'spam', 'red')
+createPlot(hTop, 'ham', 'blue')
