@@ -6,8 +6,7 @@ import matplotlib.pyplot as plt
 
 sTop = dict(Counter(format.sDict).most_common(15))
 hTop = dict(Counter(format.hDict).most_common(15))
-res = sum(map(len, format.hDict))/float(len(format.hDict))
-print(res)
+
 # keys = format.hDict.keys()
 # values = format.hDict.values()
 # tmp = plt.subplots()
