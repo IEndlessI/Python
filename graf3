@@ -23,7 +23,7 @@ def countMax(arr):
     return max
 
 
-def add_and_count(someList, outputArr):
+def addNCount(someList, outputArr):
     for item in someList:
         if not item in outputArr:
             outputArr[item] = 1
@@ -44,7 +44,6 @@ def prepareData(arrIn, arrOut, max):
 
 def createPlot(arr1, arr2):
     fig, ax = plt.subplots()
-    plt.title('Диаграмма прспределения к-вa символов в предложениях')
     ax.plot(arr1.keys(), arr1.values(), 'y')
     ax.plot(arr2.keys(), arr2.values(), 'b')
     ax.set_xlabel('Symbols', fontsize=15, color='green')
@@ -55,8 +54,8 @@ def createPlot(arr1, arr2):
 max = max(countMax(arrH), countMax(arrS))
 print(max)
 
-add_and_count(arrS, arrSS)
-add_and_count(arrH, arrSH)
+addNCount(arrS, arrSS)
+addNCount(arrH, arrSH)
 print(arrS)
 print(arrSS)
 
