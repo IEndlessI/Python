@@ -90,7 +90,6 @@ with open('sms-spam-corpus.csv', newline='') as f:
             else:
                 i += 1
                 prS *= (1/(sumH+i))
-
     pSBTxt = P_Spam*prS
     print(pSBTxt)
     for word in l:
@@ -105,6 +104,8 @@ with open('sms-spam-corpus.csv', newline='') as f:
                 prH *= (1/(sumS+i))
     pHBTxt = P_Ham*prH
     print(pHBTxt)
+    print(pSBTxt / (pHBTxt + pSBTxt))
+    print(pHBTxt / (pHBTxt + pSBTxt))
 if pSBTxt>pHBTxt:
     print("this is spam")
 else:
